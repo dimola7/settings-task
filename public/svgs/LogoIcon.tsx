@@ -226,8 +226,8 @@ export const LogoIcon = (props: SvgProps) => {
           y2="34"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" />
-          <stop offset="1" stop-color="#D0D5DD" />
+          <stop stopColor="white" />
+          <stop offset="1" stopColor="#D0D5DD" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_21_27254"
@@ -237,8 +237,8 @@ export const LogoIcon = (props: SvgProps) => {
           y2="9.95528"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#53389E" />
-          <stop offset="1" stop-color="#6941C6" />
+          <stop stopColor="#53389E" />
+          <stop offset="1" stopColor="#6941C6" />
         </linearGradient>
         <clipPath id="clip0_21_27254">
           <rect x="3" y="2" width="32.2254" height="32" rx="8" fill="white" />

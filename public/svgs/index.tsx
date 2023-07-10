@@ -10,3 +10,5 @@ export * from "./SearchIcon";
 export * from "./LogoIcon";
 export * from "./HamburgerMenuIcon";
 export * from "./LogoutIcon";
+export * from "./DownloadIcon";
+export * from "./MarkIcon";
