@@ -12,3 +12,6 @@ export * from "./HamburgerMenuIcon";
 export * from "./LogoutIcon";
 export * from "./DownloadIcon";
 export * from "./MarkIcon";
+export * from "./MailIcon";
+export * from "./RoleIcon";
+export * from "./PurpleCheck";

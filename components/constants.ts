@@ -100,3 +100,18 @@ export const data = [
 ];
 
 export const headers = ["Name", "Type", "Date created", "Status", "Role users", ""];
+
+export const activeRoles = [
+    {
+        role: "Superadmin",
+        date: "06/2023"
+    },
+    {
+        role: "Developeradmin",
+        date: "01/2023"
+    },
+    {
+        role: "Supportadmin",
+        date: "10/2023"
+    },
+]
