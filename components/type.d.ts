@@ -8,11 +8,22 @@ export type sidebarMenuProp = {
 
 export type sidebarProps = {
   menus: sidebarMenuProp[];
-  setOpen: (open: boolean) => void;
   open: boolean;
+  setOpen?: (open: boolean) => void;
+  showMobile?: boolean;
 };
 
 export type NavProps = {
   setOpen: (open: boolean) => void;
   open: boolean;
+  setShowMobile: (showMobile: boolean) => void;
+  showMobile: boolean;
+}
+
+export type TableDataProps = {
+  id: number;
+  name: string;
+  status: string;
+  type: string;
+  dateCreated: string;
 }

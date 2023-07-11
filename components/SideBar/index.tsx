@@ -2,19 +2,16 @@ import React from "react";
 import { LogoIcon, LogoutIcon, SearchIcon } from "@/public/svgs";
 import Image from "next/image";
 import Link from "next/link";
-import { sidebarMenuProp, sidebarProps } from "./type";
+import { sidebarMenuProp, sidebarProps } from "../type";
 
-const SideBar = ({ open, setOpen, menus }: sidebarProps) => {
+const SideBar = ({ open, menus, showMobile }: sidebarProps) => {
   return (
     <div
       className={`bg-white min-h-screen ${
-        open ? "w-[279px]" : "w-16"
+        open ? "w-[279px]" : showMobile ? "w-16" : ""
       } duration-500 text-gray-100 px-4 overflow-y-auto h-40`}
     >
       <div className="py-3 flex justify-end">
-        <p className="cursor-pointer" onClick={() => setOpen(!open)}>
-          close
-        </p>
       </div>
       <div className="flex items-center gap-3">
         <LogoIcon className="flex-shrink-0" />

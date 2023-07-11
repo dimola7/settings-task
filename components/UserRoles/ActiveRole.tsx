@@ -1,4 +1,4 @@
-import { PurpleCheck, RoleIcon } from "@/public/svgs";
+import { PlusIcon, PurpleCheck, RoleIcon } from "@/public/svgs";
 import { CircleIcon } from "@/public/svgs/CircleIcon";
 import React, { useState } from "react";
 import { activeRoles } from "../constants";
@@ -10,10 +10,10 @@ const ActiveRole = () => {
     setActiveIndex(index);
   };
   return (
-    <div className="flex gap-7 items-start">
+    <div className="flex gap-7 items-start lg:flex-row flex-col">
       <div className="font-inter text-sm font-medium leading-5">
         <h3 className="text-[#344054]">Active Role</h3>
-        <p className="text-[#667085]">
+        <p className="text-[#667085]  whitespace-nowrap">
           Select active role available to the user.
         </p>
       </div>
@@ -47,19 +47,20 @@ const ActiveRole = () => {
                 </p>
                 <div className="flex gap-4 pt-3">
                   <p
-                    className={`${
+                    className={`cursor-pointer ${
                       activeIndex === i ? "text-[#9E77ED]" : "text-[#667085]"
                     }`}
                   >
                     Set as default
                   </p>
-                  <p className={`text-[#6941C6]`}>Edit</p>
+                  <p className={`text-[#6941C6] cursor-pointer`}>Edit</p>
                 </div>
               </div>
             </div>
             <div>{activeIndex === i ? <PurpleCheck /> : <CircleIcon />}</div>
           </div>
         ))}
+        <div className="flex gap-3"><PlusIcon /> <p className="font-inter text-base font-medium leading-5 cursor-pointer">Add  role to user</p></div>
       </div>
     </div>
   );

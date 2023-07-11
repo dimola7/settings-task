@@ -15,3 +15,4 @@ export * from "./MarkIcon";
 export * from "./MailIcon";
 export * from "./RoleIcon";
 export * from "./PurpleCheck";
+export * from "./PlusIcon";

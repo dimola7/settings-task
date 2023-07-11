@@ -1,4 +1,5 @@
-import React, { Fragment, useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import Link from "next/link";
 import SideBar from "@/components/SideBar";
 import Navbar from "@/components/Navbar";
@@ -6,18 +7,37 @@ import UserRoles from "@/components/UserRoles";
 import { MENUS, SETTINGS_TAB } from "@/components/constants";
 
 const SettingsPage = () => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState<boolean>(true);
+  const [data, setData] = useState<any>([]);
+  const [showMobile, setShowMobile] = useState<boolean>(false);
+
+  const getRoles = async () => {
+    try {
+      const response = await axios.get(
+        "https://3line-settings-server.vercel.app/api/roles"
+      );
+      setData(response?.data);
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    getRoles();
+  }, []);
+
   return (
     <>
       <section className="sm:flex gap-6 bg-[#F2F4F7]">
         <div className={`sm:hidden block bg-white`}>
-          <Navbar open={open} setOpen={setOpen} />
+          <Navbar open={open} setOpen={setOpen} setShowMobile={setShowMobile} showMobile={showMobile} />
         </div>
-        <div className="sm:block hidden">
-          <SideBar open={open} setOpen={setOpen} menus={MENUS} />
+        <div className={`sm:block hidden`}>
+          <SideBar open={open} setOpen={setOpen} menus={MENUS} showMobile={showMobile} />
         </div>
-        <div className="m-3 mt-6 pb-12 text-xl text-gray-900 font-semibold  h-[100vh] w-[100%] overflow-y-auto scrollbar-hide">
-        <style>
+        <div className="p-3 mt-6 pb-12 text-xl text-gray-900 font-semibold h-[100vh] w-[100%] overflow-y-auto scrollbar-hide">
+          <style>
             {`
               .scrollbar-hide::-webkit-scrollbar {
                 width: 0.4rem;
@@ -59,7 +79,7 @@ const SettingsPage = () => {
               ))}
             </div>
           </div>
-          <UserRoles />
+          <UserRoles rows={data} />
         </div>
       </section>
     </>

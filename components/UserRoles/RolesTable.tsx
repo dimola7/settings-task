@@ -1,8 +1,9 @@
-import { MarkIcon } from "@/public/svgs";
+import { DownloadIcon, MarkIcon } from "@/public/svgs";
+import Image from "next/image";
 import React from "react";
-import { headers, data } from "../constants";
+import { column } from "../constants";
 
-const RolesTable = () => {
+const RolesTable = ({rows}: any) => {
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
       <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -23,7 +24,7 @@ const RolesTable = () => {
                 </label>
               </div>
             </th>
-            {headers?.map((item: string, i: number) => (
+            {column?.map((item: string, i: number) => (
               <th scope="col" className="px-6 py-3" key={i}>
                 {item}
               </th>
@@ -31,16 +32,18 @@ const RolesTable = () => {
           </tr>
         </thead>
         <tbody>
-          {data?.map(
+          {rows?.map(
             ({
               id,
               name,
               type,
               dateCreated,
               status,
-              download: Download,
             }: any) => (
-              <tr className="bg-white hover:bg-[#F9FAFB] mb-1 border-b border-solid border-[#D0D5DD]" key={id}>
+              <tr
+                className="bg-white hover:bg-[#F9FAFB] mb-1 border-b border-solid border-[#D0D5DD]"
+                key={id}
+              >
                 <td className="w-4 p-4">
                   <div className="flex items-center">
                     <input
@@ -69,14 +72,21 @@ const RolesTable = () => {
                         : "bg-[#F2994A] text-[#F2F2F2]"
                     }`}
                   >
-                    {/* {status === "active" ? <MarkIcon /> : null}  */}
                     {status === "active" ? <MarkIcon /> : null}
                     {status}
                   </span>
                 </td>
-                <td className="px-6 py-4">ff</td>
                 <td className="px-6 py-4">
-                  <Download />
+                  <Image
+                    src={"/images/tableImg.png"}
+                    alt=""
+                    width={124}
+                    height={24}
+                    className="rounded-lg"
+                  />
+                </td>
+                <td className="px-6 py-4 cursor-pointer">
+                  <DownloadIcon />
                 </td>
               </tr>
             )

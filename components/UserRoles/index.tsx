@@ -4,7 +4,7 @@ import ActiveRole from "./ActiveRole";
 import ConnectedEmail from "./ConnectedEmail";
 import RolesTable from "./RolesTable";
 
-const UserRoles = () => {
+const UserRoles = ({ rows }: any) => {
   return (
     <div>
       <h3 className="font-inter text-base font-medium leading-7 text-[#101828] mt-7 mb-2">
@@ -17,7 +17,7 @@ const UserRoles = () => {
       <ConnectedEmail />
       <hr className="border border-[#EAECF0] my-5" />
       <ActiveRole />
-      <div className="flex justify-between items-center py-5">
+      <div className="flex justify-between items-center py-5 flex-wrap gap-4">
         <h2 className="font-inter text-base font-normal font-medium text-gray-900 leading-normal text-[#101828]">
           User Roles
         </h2>
@@ -29,7 +29,7 @@ const UserRoles = () => {
           Download all
         </button>
       </div>
-      <RolesTable />
+      <RolesTable rows={rows} />
     </div>
   );
 };

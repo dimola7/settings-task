@@ -1,6 +1,5 @@
 import {
   DashboardIcon,
-  DownloadIcon,
   HomeIcon,
   projectsIcon,
   ReportingIcon,
@@ -33,73 +32,7 @@ export const SETTINGS_TAB = [
   "API",
 ];
 
-export const data = [
-  {
-    id: 1,
-    name: "superadmin",
-    type: "default",
-    dateCreated: "Jan 1, 2023",
-    status: "active",
-    roleUsers: ["one", "two", "three"],
-    download: DownloadIcon,
-  },
-  {
-    id: 2,
-    name: "Merchantadmin",
-    type: "default",
-    dateCreated: "Feb 1, 2023",
-    status: "active",
-    roleUsers: ["one", "two", "three"],
-    download: DownloadIcon,
-  },
-  {
-    id: 3,
-    name: "supportadmin",
-    type: "default",
-    dateCreated: "Jan 1, 2023",
-    status: "active",
-    roleUsers: ["one", "two", "three"],
-    download: DownloadIcon,
-  },
-  {
-    id: 4,
-    name: "sales personnel",
-    type: "custom",
-    dateCreated: "Jan 1, 2023",
-    status: "active",
-    roleUsers: ["one", "two", "three"],
-    download: DownloadIcon,
-  },
-  {
-    id: 5,
-    name: "Deputy sales personnel",
-    type: "custom",
-    dateCreated: "Jan 1, 2023",
-    status: "active",
-    roleUsers: ["one", "two", "three"],
-    download: DownloadIcon,
-  },
-  {
-    id: 6,
-    name: "Developeradmin",
-    type: "system-custom",
-    dateCreated: "Jan 1, 2023",
-    status: "in active",
-    roleUsers: ["one", "two", "three"],
-    download: DownloadIcon,
-  },
-  {
-    id: 7,
-    name: "Developer-basic",
-    type: "system-custom",
-    dateCreated: "Jan 1, 2023",
-    status: "in active",
-    roleUsers: ["one", "two", "three"],
-    download: DownloadIcon,
-  },
-];
-
-export const headers = ["Name", "Type", "Date created", "Status", "Role users", ""];
+export const column = ["Name", "Type", "Date created", "Status", "Role users", ""];
 
 export const activeRoles = [
     {
